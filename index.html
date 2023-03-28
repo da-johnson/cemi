@@ -1,91 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Grid with Hover and Clickable URLs</title>
-	<style>
-		.grid {
-			display: grid;
-			grid-template-columns: repeat(12, 1fr);
-			grid-gap: 10px;
-		}
-		.grid-item {
-			background-color: #ccc;
-			padding: 20px;
-			text-align: center;
-			font-size: 24px;
-			cursor: pointer;
-		}
-		.grid-item:hover {
-			background-color: #ddd;
-		}
-		.metadata {
-			display: none;
-			position: absolute;
-			top: 0;
-			left: 0;
-			padding: 20px;
-			background-color: #fff;
-			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-			z-index: 9999;
-		}
-		.metadata ul {
-			list-style: none;
-			padding: 0;
-			margin: 0;
-		}
-		.metadata ul li {
-			margin-bottom: 10px;
-		}
-		.metadata a {
-			color: blue;
-			text-decoration: underline;
-		}
-	</style>
+        <meta charset="UTF-8">
+        <title>Grid with Hover and Clickable URLs</title>
+        <style>
+                .grid {
+                        display: grid;
+                        grid-template-columns: repeat(12, 1fr);
+                        grid-gap: 10px;
+                }
+                .grid-item {
+                        background-color: #ccc;
+                        padding: 20px;
+                        text-align: center;
+                        font-size: 24px;
+                        cursor: pointer;
+                }
+                .grid-item:hover {
+                        background-color: #ddd;
+                }
+                .metadata {
+                        display: none;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        padding: 20px;
+                        background-color: #fff;
+                        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+                        z-index: 9999;
+                }
+                .metadata ul {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                }
+                .metadata ul li {
+                        margin-bottom: 10px;
+                }
+                .metadata a {
+                        color: blue;
+                        text-decoration: underline;
+                }
+        </style>
 </head>
 <body>
-	<div class="grid">
-		<!-- Generate grid items using a loop -->
-		<?php for ($i = 0; $i < 144; $i++): ?>
-			<div class="grid-item" data-index="<?php echo $i; ?>">
-				Grid Item <?php echo $i; ?>
-			</div>
-		<?php endfor; ?>
-	</div>
+        <div class="grid">
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">4</div>
+                <div class="grid-item">5</div>
+                <div class="grid-item">6</div>
+                <div class="grid-item">7</div>
+                <div class="grid-item">8</div>
+                <div class="grid-item">9</div>
+                <div class="grid-item">10</div>
+                <div class="grid-item">11</div>
+                <div class="grid-item">12</div>
+        </div>
 
-	<!-- Metadata box -->
-	<div class="metadata"></div>
-
-	<script>
-		// Get all grid items
-		const gridItems = document.querySelectorAll('.grid-item');
-
-		// Add event listeners for hover and click
-		gridItems.forEach(item => {
-			item.addEventListener('mouseover', showMetadata);
-			item.addEventListener('mouseout', hideMetadata);
-			item.addEventListener('click', openUrl);
-		});
-
-		// Show metadata on hover
-		function showMetadata() {
-			const index = this.dataset.index;
-			const metadataBox = document.querySelector('.metadata');
-			metadataBox.innerHTML = '<ul><li>Metadata for Grid Item ' + index + '</li><li><a href="#">Click me</a></li></ul>';
-			metadataBox.style.display = 'block';
-		}
-
-		// Hide metadata on mouseout
-		function hideMetadata() {
-			const metadataBox = document.querySelector('.metadata');
-			metadataBox.style.display = 'none';
-		}
-
-		// Open URL on click
-		function openUrl() {
-			const url = 'https://www.example.com';
-			window.open(url, '_blank');
-		}
-	</script>
+        <script src="script.js"></script>
 </body>
 </html>
