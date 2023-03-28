@@ -24,9 +24,10 @@ html, body {
 
 .metadata {
   display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: fixed; /* updated */
+  top: 50%; /* updated */
+  left: 50%; /* updated */
+  transform: translate(-50%, -50%); /* updated */
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
