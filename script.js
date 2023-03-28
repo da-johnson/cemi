@@ -1,29 +1,26 @@
-// Get all grid items
 const gridItems = document.querySelectorAll('.grid-item');
 
-// Add event listeners for hover and click
 gridItems.forEach(item => {
-    item.addEventListener('mouseover', showMetadata);
-    item.addEventListener('mouseout', hideMetadata);
-    item.addEventListener('click', openUrl);
+  item.addEventListener('click', () => {
+    const title = item.dataset.title;
+    const url = item.dataset.url;
+    const metadata = document.querySelector('.metadata');
+    metadata.innerHTML = `
+      <h2>${title}</h2>
+      <ul>
+        <li><a href="${url}" target="_blank">${url}</a></li>
+      </ul>
+    `;
+    metadata.style.display = 'block';
+  });
 });
 
-// Show metadata on hover
-function showMetadata() {
-    const index = this.dataset.index;
-    const metadataBox = document.querySelector('.metadata');
-    metadataBox.innerHTML = '<ul><li>Metadata for Grid Item ' + index + '</li><li><a href="#">Click me</a></li></ul>';
-    metadataBox.style.display = 'block';
-}
-
-// Hide metadata on mouseout
-function hideMetadata() {
-    const metadataBox = document.querySelector('.metadata');
-    metadataBox.style.display = 'none';
-}
-
-// Open URL on click
-function openUrl() {
-    const url = 'https://www.example.com';
-    window.open(url, '_blank');
-}
+// hide metadata on click outside of the grid or metadata
+document.addEventListener('click', (event) => {
+  const isGridItem = event.target.classList.contains('grid-item');
+  const isMetadata = event.target.classList.contains('metadata');
+  const metadata = document.querySelector('.metadata');
+  if (!isGridItem && !isMetadata) {
+    metadata.style.display = 'none';
+  }
+});
