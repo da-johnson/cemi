@@ -16,9 +16,6 @@ html, body {
   text-align: center;
   font-size: 24px;
   cursor: pointer;
-  position: relative;
-  height: calc((100% - 80px) / 9); /* added */
-  width: calc((100% - 80px) / 9); /* added */
 }
 
 .grid-item:hover {
