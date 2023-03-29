@@ -1,45 +1,45 @@
+/* Style the grid container */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+
+/* Style the grid items */
 .grid-item {
-  background-color: #ccc;
-  padding: 0;
-  text-align: center;
-  font-size: 24px;
-  cursor: pointer;
-  position: relative;
-  padding-top: 100%;
-}
-
-.grid-item:hover {
-  background-color: #ddd;
-}
-
-.grid-item .metadata {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: none;
+  background-color: #f1f1f1;
   padding: 20px;
+  text-align: center;
+  font-size: 30px;
+}
+
+/* Style the metadata block */
+.metadata {
+  position: absolute; /* Position the block absolutely within the nearest positioned ancestor */
+  display: none; /* Hide the block by default */
   background-color: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  z-index: 9999;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  z-index: 1; /* Set a high z-index to ensure the block appears on top of other elements */
+  max-width: 400px;
+  overflow: auto;
 }
 
-.grid-item:hover .metadata {
-  display: block;
+/* Style the metadata block title */
+.metadata h2 {
+  margin-top: 0;
 }
 
+/* Style the metadata block list */
 .metadata ul {
+  margin-top: 0;
+  margin-bottom: 0;
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
-.metadata ul li {
-  margin-bottom: 10px;
-}
-
+/* Style the metadata block links */
 .metadata a {
-  color: blue;
+  color: #000;
   text-decoration: underline;
 }
