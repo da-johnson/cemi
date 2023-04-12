@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* This code defines styles for a legend, which is typically used to explain what the colors in a visualization mean */
+
+/* First, we define the properties for the container element of the legend */
+.legend {
+display: flex; /* Use flexbox to arrange the items horizontally */
+justify-content: left; /* Align the items to the left of the container */
+}
+
+/* Next, we define the properties for the individual items in the legend */
+.legend-item {
+margin: 5px; /* Add some space between items */
+padding: 5px; /* Add some padding to make the items more visually appealing */
+font-size: 14px; /* Set the font size of the text */
+border: 1px solid #ccc; /* Add a border around each item */
+color: white
+}
+
+/* Each legend item has a different background color to represent different data categories */
+.legend-item.plasmid {
+background-color: #cacaaa; / /*Set the background color for the plasmid category */
+}
+
+.legend-item.primer {
+background-color: #9b9ece; /* Set the background color for the primer category */
+}
+
+.legend-item.cells {
+background-color: #ed6a5a; /* Set the background color for the cells category */
+}
+
+.legend-item.glycerol {
+background-color: #5c7457; /* Set the background color for the stabs category */
+}
+
+.legend-item.misc {
+background-color: #141b41; /* Set the background color for the misc category */
+}
+
+.legend-item.empty {
+background-color: #A9A9A9; /* Set the background color for empty category */
+}
+
+.grid-container {
+  background-color: black;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-gap: 1.5px;
+  justify-cotent: center;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 1px 0;
+  font-size 10px;
+}
+
+.button {
+  background-color: grey;
+  border: none;
+  color: white;
+  padding: 0%;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 12px;
+  margin: 0px 0px;
+  cursor: pointer;
+  max-width: 100%;
+
+  /* Set line-height */
+  line-height: 13px;
+  min-height: 50px;
+}
+
+.button:hover {
+  opacity: 0.9;
+  overflow: visible;
+}
+
+.disabled {
+  background-color: grey;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 988px) {
+  .column {
+    width: 100%;
+  }
+  .button {
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* Define a CSS class called 'data' that is used to style the data to be displayed and hide it by default */
+.data {
+display: none; /* Hide the data by default */
+}
+
+/* Define a CSS class called 'active' that is used to show the data by changing the display property to block */
+.data.active {
+display: block; /* Change the display property of the data to block to show it */
+}
+
+/* Individual button colors based on button type */
+    button[type="plasmid"] {
+      background-color: #cacaaa;
+    }
+   
+	button[type="primer"] {
+	background-color: #9b9ece;
+    }
+    
+	button[type="competent cell"] {
+      background-color: #ed6a5a;
+    }
+    
+	button[type="glycerol stock"] {
+      background-color: #5c7457;
+    }
+    
+	button[type="misc"] {
+      background-color: #141b41;
+    }
+    
+	button[type="empty"] {
+      background-color: #A9A9A9;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+</style>
+</head>
+<body>
+<h2>CEMI project</h2>
+<div class="legend">
+  <div class="legend-item plasmid">plasmid</div>
+  <div class="legend-item primer">primer</div>
+  <div class="legend-item cells">competent Cells</div>
+  <div class="legend-item glycerol">glycerol stock</div>
+  <div class="legend-item misc">misc</div>
+  <div class="legend-item empty">empty</div>
+</div>
+<div class="row">
+  <div class="column" style="background-color:white;">
+  <div class="grid-container">
+<button class="button" data-target="data1" type="primer"><p>1</p><p>Z__-fwd<br>nan</p></button>
+<button class="button" data-target="data2" type="primer"><p>2</p><p>Z__-rvs<br>nan</p></button>
+<button class="button" data-target="data3" type="primer"><p>3</p><p>helix-ovr-sfGFP-fwd<br>nan</p></button>
+<button class="button" data-target="data4" type="primer"><p>4</p><p>helix-ovr-sfGFP-rvs<br>nan</p></button>
+<button class="button" data-target="data5" type="primer"><p>5</p><p>EMeRALD_Z__-fwd<br>nan</p></button>
+<button class="button" data-target="data6" type="primer"><p>6</p><p>EMeRALD_Z__-rvs<br>nan</p></button>
+<button class="button" data-target="data7" type="primer"><p>7</p><p>helixCam-cons-fwd<br>nan</p></button>
+<button class="button" data-target="data8" type="primer"><p>8</p><p>helixCam-cons-rvs<br>nan</p></button>
+<button class="button disabled" data-target="data9" type="empty">9</button>
+<button class="button" data-target="data10" type="primer"><p>10</p><p>Z__-fwd<br>nan</p></button>
+<button class="button" data-target="data11" type="primer"><p>11</p><p>Z__-rvs<br>nan</p></button>
+<button class="button" data-target="data12" type="primer"><p>12</p><p>helix-ovr-sfGFP-fwd<br>nan</p></button>
+<button class="button" data-target="data13" type="primer"><p>13</p><p>helix-ovr-sfGFP-rvs<br>nan</p></button>
+<button class="button" data-target="data14" type="primer"><p>14</p><p>EMeRALD_Z__-fwd<br>nan</p></button>
+<button class="button" data-target="data15" type="primer"><p>15</p><p>EMeRALD_Z__-rvs<br>nan</p></button>
+<button class="button" data-target="data16" type="primer"><p>16</p><p>helixCam-cons-fwd<br>nan</p></button>
+<button class="button" data-target="data17" type="primer"><p>17</p><p>helixCam-cons-rvs<br>nan</p></button>
+<button class="button disabled" data-target="data18" type="empty">18</button>
+<button class="button" data-target="data19" type="plasmid"><p>19</p><p>Z17-plasmid<br>CARB</p></button>
+<button class="button" data-target="data20" type="plasmid"><p>20</p><p>Z18-plasmid<br>CARB</p></button>
+<button class="button" data-target="data21" type="plasmid"><p>21</p><p>EMeRALD-plasmid<br>KAN</p></button>
+<button class="button disabled" data-target="data22" type="empty">22</button>
+<button class="button disabled" data-target="data23" type="empty">23</button>
+<button class="button disabled" data-target="data24" type="empty">24</button>
+<button class="button disabled" data-target="data25" type="empty">25</button>
+<button class="button disabled" data-target="data26" type="empty">26</button>
+<button class="button disabled" data-target="data27" type="empty">27</button>
+<button class="button" data-target="data28" type="glycerol stock"><p>28</p><p>helixCam-Z17-part<br>CARB</p></button>
+<button class="button" data-target="data29" type="glycerol stock"><p>29</p><p>helixCam-Z18-part<br>CARB</p></button>
+<button class="button" data-target="data30" type="glycerol stock"><p>30</p><p>EMeRALD-part<br>CARB</p></button>
+<button class="button disabled" data-target="data31" type="empty">31</button>
+<button class="button disabled" data-target="data32" type="empty">32</button>
+<button class="button disabled" data-target="data33" type="empty">33</button>
+<button class="button disabled" data-target="data34" type="empty">34</button>
+<button class="button disabled" data-target="data35" type="empty">35</button>
+<button class="button" data-target="data36" type="plasmid"><p>36</p><p>Z17-part-plasmid<br>CARB</p></button>
+<button class="button" data-target="data37" type="plasmid"><p>37</p><p>Z18-part-plasmid<br>CARB</p></button>
+<button class="button" data-target="data38" type="plasmid"><p>38</p><p>EMeRALD-part-plasmid<br>CARB</p></button>
+<button class="button disabled" data-target="data39" type="empty">39</button>
+<button class="button disabled" data-target="data40" type="empty">40</button>
+<button class="button disabled" data-target="data41" type="empty">41</button>
+<button class="button disabled" data-target="data42" type="empty">42</button>
+<button class="button disabled" data-target="data43" type="empty">43</button>
+<button class="button disabled" data-target="data44" type="empty">44</button>
+<button class="button disabled" data-target="data45" type="empty">45</button>
+<button class="button disabled" data-target="data46" type="empty">46</button>
+<button class="button disabled" data-target="data47" type="empty">47</button>
+<button class="button disabled" data-target="data48" type="empty">48</button>
+<button class="button disabled" data-target="data49" type="empty">49</button>
+<button class="button disabled" data-target="data50" type="empty">50</button>
+<button class="button disabled" data-target="data51" type="empty">51</button>
+<button class="button disabled" data-target="data52" type="empty">52</button>
+<button class="button disabled" data-target="data53" type="empty">53</button>
+<button class="button disabled" data-target="data54" type="empty">54</button>
+<button class="button disabled" data-target="data55" type="empty">55</button>
+<button class="button disabled" data-target="data56" type="empty">56</button>
+<button class="button disabled" data-target="data57" type="empty">57</button>
+<button class="button disabled" data-target="data58" type="empty">58</button>
+<button class="button disabled" data-target="data59" type="empty">59</button>
+<button class="button disabled" data-target="data60" type="empty">60</button>
+<button class="button disabled" data-target="data61" type="empty">61</button>
+<button class="button disabled" data-target="data62" type="empty">62</button>
+<button class="button disabled" data-target="data63" type="empty">63</button>
+<button class="button disabled" data-target="data64" type="empty">64</button>
+<button class="button disabled" data-target="data65" type="empty">65</button>
+<button class="button disabled" data-target="data66" type="empty">66</button>
+<button class="button disabled" data-target="data67" type="empty">67</button>
+<button class="button disabled" data-target="data68" type="empty">68</button>
+<button class="button disabled" data-target="data69" type="empty">69</button>
+<button class="button disabled" data-target="data70" type="empty">70</button>
+<button class="button disabled" data-target="data71" type="empty">71</button>
+<button class="button disabled" data-target="data72" type="empty">72</button>
+<button class="button" data-target="data73" type="misc"><p>73</p><p>EMeRALD BB<br>KAN</p></button>
+<button class="button" data-target="data74" type="misc"><p>74</p><p>helixCam BB<br>AMP</p></button>
+<button class="button" data-target="data75" type="misc"><p>75</p><p>sfGFP<br>nan</p></button>
+<button class="button" data-target="data76" type="misc"><p>76</p><p>Z17<br>nan</p></button>
+<button class="button" data-target="data77" type="misc"><p>77</p><p>Z18<br>nan</p></button>
+<button class="button" data-target="data78" type="misc"><p>78</p><p>helixCam/sfGFP-1<br>AMP/KAN</p></button>
+<button class="button" data-target="data79" type="misc"><p>79</p><p>helixCam/sfGFP-2<br>AMP/KAN</p></button>
+<button class="button" data-target="data80" type="misc"><p>80</p><p>helixCam/sfGFP-3<br>AMP/KAN</p></button>
+<button class="button" data-target="data81" type="glycerol stock"><p>81</p><p>EMeRALD<br>nan</p></button>
+</div>
+</div>
+<div class="column right" style="display:none">
+<div class="data active" id="data1">
+        <p>position:1</p>
+        <h2>primer Z__-fwd</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>ATGAAATACCTGCTGCCGA 64.0</p>
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:78-g43nzbo"	arget="_blank">Geneious Link</a></p>
+        
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p>100 uM</p>
+    </div>
+        
+<div class="data active" id="data2">
+        <p>position:2</p>
+        <h2>primer Z__-rvs</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>GAATTGCCACTTAATGCCAACC 64.0</p>
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:7d-g43o73c"	arget="_blank">Geneious Link</a></p>
+        
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p>100 uM</p>
+    </div>
+        
+<div class="data active" id="data3">
+        <p>position:3</p>
+        <h2>primer helix-ovr-sfGFP-fwd</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>ACAGAATTCATTAAAGAGGAGAAATTAACTATGCGTAAAGGCGAAGAGC 64.0</p>
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:2p-g43g8vs"	arget="_blank">Geneious Link</a></p>
+        
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p>100 uM</p>
+    </div>
+        
+<div class="data active" id="data4">
+        <p>position:4</p>
+        <h2>primer helix-ovr-sfGFP-rvs</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>GGAGTCCAAGCTCAGCTAATTAAGCTTTCATCATTTGTACAGTTCATCCATACCATG 64.0</p>
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:2t-g43gc8a"	arget="_blank">Geneious Link</a></p>
+        
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p>100 uM</p>
+    </div>
+        
+<div class="data active" id="data5">
+        <p>position:5</p>
+        <h2>primer EMeRALD_Z__-fwd</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>ACAGGAGTCCAAGCTCAGCTAATTAAGCTTTTCACCACCTTTACTAGTCCAAAC 64.0</p>
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:78-g43nzbo"	arget="_blank">Geneious Link</a></p>
+        
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p>100 uM</p>
+    </div>
+        
+<div class="data active" id="data6">
+        <p>position:6</p>
+        <h2>primer EMeRALD_Z__-rvs</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>ACAGAATTCATTAAAGAGGAGAAATTAACTTACGGGTATCCCAATCAACAG 64.0</p>
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:7d-g43o73c"	arget="_blank">Geneious Link</a></p>
+        
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p>100 uM</p>
+    </div>
+        
+<div class="data active" id="data7">
+        <p>position:7</p>
+        <h2>primer helixCam-cons-fwd</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>AAGCTTAATTAGCTGAGCTTGGA 64.0</p>
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:25-g43fmth"	arget="_blank">Geneious Link</a></p>
+        
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p>100 uM</p>
+    </div>
+        
+<div class="data active" id="data8">
+        <p>position:8</p>
+        <h2>primer helixCam-cons-rvs</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>AGTTAATTTCTCCTCTTTAATGAATTCTGTGTG 64.0</p>
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:28-g43fo33"	arget="_blank">Geneious Link</a></p>
+        
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p></p>
+    </div>
+        
+<div class="data active" id="data9">
+        <h2>Data 9</h2>
+        <p>Add data for 9..</p>
+    </div>
+    
+<div class="data active" id="data10">
+        <p>position:10</p>
+        <h2>primer Z__-fwd</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>ATGAAATACCTGCTGCCGA 64.0</p>
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:78-g43nzbo"	arget="_blank">Geneious Link</a></p>
+        
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p>10 uM</p>
+    </div>
+        
+<div class="data active" id="data11">
+        <p>position:11</p>
+        <h2>primer Z__-rvs</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>GAATTGCCACTTAATGCCAACC 64.0</p>
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:7d-g43o73c"	arget="_blank">Geneious Link</a></p>
+        
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p>10 uM</p>
+    </div>
+        
+<div class="data active" id="data12">
+        <p>position:12</p>
+        <h2>primer helix-ovr-sfGFP-fwd</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>ACAGAATTCATTAAAGAGGAGAAATTAACTATGCGTAAAGGCGAAGAGC 64.0</p>
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:2p-g43g8vs"	arget="_blank">Geneious Link</a></p>
+        
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p>10 uM</p>
+    </div>
+        
+<div class="data active" id="data13">
+        <p>position:13</p>
+        <h2>primer helix-ovr-sfGFP-rvs</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>GGAGTCCAAGCTCAGCTAATTAAGCTTTCATCATTTGTACAGTTCATCCATACCATG 64.0</p>
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:2t-g43gc8a"	arget="_blank">Geneious Link</a></p>
+        
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p>10 uM</p>
+    </div>
+        
+<div class="data active" id="data14">
+        <p>position:14</p>
+        <h2>primer EMeRALD_Z__-fwd</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>ACAGGAGTCCAAGCTCAGCTAATTAAGCTTTTCACCACCTTTACTAGTCCAAAC 64.0</p>
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:78-g43nzbo"	arget="_blank">Geneious Link</a></p>
+        
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p>10 uM</p>
+    </div>
+        
+<div class="data active" id="data15">
+        <p>position:15</p>
+        <h2>primer EMeRALD_Z__-rvs</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>ACAGAATTCATTAAAGAGGAGAAATTAACTTACGGGTATCCCAATCAACAG 64.0</p>
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:7d-g43o73c"	arget="_blank">Geneious Link</a></p>
+        
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p>10 uM</p>
+    </div>
+        
+<div class="data active" id="data16">
+        <p>position:16</p>
+        <h2>primer helixCam-cons-fwd</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>AAGCTTAATTAGCTGAGCTTGGA 64.0</p>
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:25-g43fmth"	arget="_blank">Geneious Link</a></p>
+        
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p>10 uM</p>
+    </div>
+        
+<div class="data active" id="data17">
+        <p>position:17</p>
+        <h2>primer helixCam-cons-rvs</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>AGTTAATTTCTCCTCTTTAATGAATTCTGTGTG 64.0</p>
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:28-g43fo33"	arget="_blank">Geneious Link</a></p>
+        
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p>10 uM</p>
+    </div>
+        
+<div class="data active" id="data18">
+        <h2>Data 18</h2>
+        <p>Add data for 18..</p>
+    </div>
+    
+<div class="data active" id="data19">
+        <p>position:19</p>
+        <h2>plasmid Z17-plasmid</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>CARB</p>
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:13z-g1vrf6z"	arget="_blank">Geneious Link</a></p>
+        <p><a href="Z17-plasmid.gb" download="Plasmid.gb">Download</a></p>
+        <p><a href="https://www.addgene.org/186313/"target="_blank">AddGene</a></p>
+        <p>170.8 ng/uL 43.49 nM</p>
+    </div>
+        
+<div class="data active" id="data20">
+        <p>position:20</p>
+        <h2>plasmid Z18-plasmid</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>CARB</p>
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:140-g1vrf6z"	arget="_blank">Geneious Link</a></p>
+        <p><a href="Z18-plasmid.gb" download="Plasmid.gb">Download</a></p>
+        <p><a href="https://www.addgene.org/186314/"target="_blank">AddGene</a></p>
+        <p>159.7 ng/uL 40.67 nM</p>
+    </div>
+        
+<div class="data active" id="data21">
+        <p>position:21</p>
+        <h2>plasmid EMeRALD-plasmid</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>KAN</p>
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:13n-g1vr239"	arget="_blank">Geneious Link</a></p>
+        <p><a href="EMeRALD-plasmid.gb" download="Plasmid.gb">Download</a></p>
+        <p><a href="https://www.addgene.org/108244/"target="_blank">AddGene</a></p>
+        <p>7,059 BP 6.7 nM</p>
+    </div>
+        
+<div class="data active" id="data22">
+        <h2>Data 22</h2>
+        <p>Add data for 22..</p>
+    </div>
+    
+<div class="data active" id="data23">
+        <h2>Data 23</h2>
+        <p>Add data for 23..</p>
+    </div>
+    
+<div class="data active" id="data24">
+        <h2>Data 24</h2>
+        <p>Add data for 24..</p>
+    </div>
+    
+<div class="data active" id="data25">
+        <h2>Data 25</h2>
+        <p>Add data for 25..</p>
+    </div>
+    
+<div class="data active" id="data26">
+        <h2>Data 26</h2>
+        <p>Add data for 26..</p>
+    </div>
+    
+<div class="data active" id="data27">
+        <h2>Data 27</h2>
+        <p>Add data for 27..</p>
+    </div>
+    
+<div class="data active" id="data28">
+        <p>position:28</p>
+        <h2>glycerol stock helixCam-Z17-part</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>CARB</p>
+        
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:19a-g1vy7gz"	arget="_blank">Geneious Link</a></p>
+        <p><a href="Z17-part.gb" download="Plasmid.gb">Download</a></p>
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p></p>
+    </div>
+        
+<div class="data active" id="data29">
+        <p>position:29</p>
+        <h2>glycerol stock helixCam-Z18-part</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>CARB</p>
+        
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:19x-g1vy8it"	arget="_blank">Geneious Link</a></p>
+        <p><a href="Z18-part.gb" download="Plasmid.gb">Download</a></p>
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p></p>
+    </div>
+        
+<div class="data active" id="data30">
+        <p>position:30</p>
+        <h2>glycerol stock EMeRALD-part</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>CARB</p>
+        
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:1ap-g1vycx9"	arget="_blank">Geneious Link</a></p>
+        <p><a href="EMeRALD-part.gb" download="Plasmid.gb">Download</a></p>
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p></p>
+    </div>
+        
+<div class="data active" id="data31">
+        <h2>Data 31</h2>
+        <p>Add data for 31..</p>
+    </div>
+    
+<div class="data active" id="data32">
+        <h2>Data 32</h2>
+        <p>Add data for 32..</p>
+    </div>
+    
+<div class="data active" id="data33">
+        <h2>Data 33</h2>
+        <p>Add data for 33..</p>
+    </div>
+    
+<div class="data active" id="data34">
+        <h2>Data 34</h2>
+        <p>Add data for 34..</p>
+    </div>
+    
+<div class="data active" id="data35">
+        <h2>Data 35</h2>
+        <p>Add data for 35..</p>
+    </div>
+    
+<div class="data active" id="data36">
+        <p>position:36</p>
+        <h2>plasmid Z17-part-plasmid</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>CARB</p>
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:19a-g1vy7gz"	arget="_blank">Geneious Link</a></p>
+        <p><a href="Z17-part.gb" download="Plasmid.gb">Download</a></p>
+        
+        <p>518 ng/uL</p>
+    </div>
+        
+<div class="data active" id="data37">
+        <p>position:37</p>
+        <h2>plasmid Z18-part-plasmid</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>CARB</p>
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:19x-g1vy8it"	arget="_blank">Geneious Link</a></p>
+        <p><a href="Z18-part.gb" download="Plasmid.gb">Download</a></p>
+        
+        <p>669 ng/uL</p>
+    </div>
+        
+<div class="data active" id="data38">
+        <p>position:38</p>
+        <h2>plasmid EMeRALD-part-plasmid</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>CARB</p>
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:1ap-g1vycx9"	arget="_blank">Geneious Link</a></p>
+        <p><a href="EMeRALD-part.gb" download="Plasmid.gb">Download</a></p>
+        
+        <p>462 ng/uL</p>
+    </div>
+        
+<div class="data active" id="data39">
+        <h2>Data 39</h2>
+        <p>Add data for 39..</p>
+    </div>
+    
+<div class="data active" id="data40">
+        <h2>Data 40</h2>
+        <p>Add data for 40..</p>
+    </div>
+    
+<div class="data active" id="data41">
+        <h2>Data 41</h2>
+        <p>Add data for 41..</p>
+    </div>
+    
+<div class="data active" id="data42">
+        <h2>Data 42</h2>
+        <p>Add data for 42..</p>
+    </div>
+    
+<div class="data active" id="data43">
+        <h2>Data 43</h2>
+        <p>Add data for 43..</p>
+    </div>
+    
+<div class="data active" id="data44">
+        <h2>Data 44</h2>
+        <p>Add data for 44..</p>
+    </div>
+    
+<div class="data active" id="data45">
+        <h2>Data 45</h2>
+        <p>Add data for 45..</p>
+    </div>
+    
+<div class="data active" id="data46">
+        <h2>Data 46</h2>
+        <p>Add data for 46..</p>
+    </div>
+    
+<div class="data active" id="data47">
+        <h2>Data 47</h2>
+        <p>Add data for 47..</p>
+    </div>
+    
+<div class="data active" id="data48">
+        <h2>Data 48</h2>
+        <p>Add data for 48..</p>
+    </div>
+    
+<div class="data active" id="data49">
+        <h2>Data 49</h2>
+        <p>Add data for 49..</p>
+    </div>
+    
+<div class="data active" id="data50">
+        <h2>Data 50</h2>
+        <p>Add data for 50..</p>
+    </div>
+    
+<div class="data active" id="data51">
+        <h2>Data 51</h2>
+        <p>Add data for 51..</p>
+    </div>
+    
+<div class="data active" id="data52">
+        <h2>Data 52</h2>
+        <p>Add data for 52..</p>
+    </div>
+    
+<div class="data active" id="data53">
+        <h2>Data 53</h2>
+        <p>Add data for 53..</p>
+    </div>
+    
+<div class="data active" id="data54">
+        <h2>Data 54</h2>
+        <p>Add data for 54..</p>
+    </div>
+    
+<div class="data active" id="data55">
+        <h2>Data 55</h2>
+        <p>Add data for 55..</p>
+    </div>
+    
+<div class="data active" id="data56">
+        <h2>Data 56</h2>
+        <p>Add data for 56..</p>
+    </div>
+    
+<div class="data active" id="data57">
+        <h2>Data 57</h2>
+        <p>Add data for 57..</p>
+    </div>
+    
+<div class="data active" id="data58">
+        <h2>Data 58</h2>
+        <p>Add data for 58..</p>
+    </div>
+    
+<div class="data active" id="data59">
+        <h2>Data 59</h2>
+        <p>Add data for 59..</p>
+    </div>
+    
+<div class="data active" id="data60">
+        <h2>Data 60</h2>
+        <p>Add data for 60..</p>
+    </div>
+    
+<div class="data active" id="data61">
+        <h2>Data 61</h2>
+        <p>Add data for 61..</p>
+    </div>
+    
+<div class="data active" id="data62">
+        <h2>Data 62</h2>
+        <p>Add data for 62..</p>
+    </div>
+    
+<div class="data active" id="data63">
+        <h2>Data 63</h2>
+        <p>Add data for 63..</p>
+    </div>
+    
+<div class="data active" id="data64">
+        <h2>Data 64</h2>
+        <p>Add data for 64..</p>
+    </div>
+    
+<div class="data active" id="data65">
+        <h2>Data 65</h2>
+        <p>Add data for 65..</p>
+    </div>
+    
+<div class="data active" id="data66">
+        <h2>Data 66</h2>
+        <p>Add data for 66..</p>
+    </div>
+    
+<div class="data active" id="data67">
+        <h2>Data 67</h2>
+        <p>Add data for 67..</p>
+    </div>
+    
+<div class="data active" id="data68">
+        <h2>Data 68</h2>
+        <p>Add data for 68..</p>
+    </div>
+    
+<div class="data active" id="data69">
+        <h2>Data 69</h2>
+        <p>Add data for 69..</p>
+    </div>
+    
+<div class="data active" id="data70">
+        <h2>Data 70</h2>
+        <p>Add data for 70..</p>
+    </div>
+    
+<div class="data active" id="data71">
+        <h2>Data 71</h2>
+        <p>Add data for 71..</p>
+    </div>
+    
+<div class="data active" id="data72">
+        <h2>Data 72</h2>
+        <p>Add data for 72..</p>
+    </div>
+    
+<div class="data active" id="data73">
+        <p>position:73</p>
+        <h2>misc EMeRALD BB</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>KAN</p>
+        
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:7n-g43ocbk"	arget="_blank">Geneious Link</a></p>
+        <p><a href="EMeRALD-BB.gb" download="Plasmid.gb">Download</a></p>
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p></p>
+        <p></p>
+        <p>misc</p>
+        <p></p>
+    </div>
+        
+<div class="data active" id="data74">
+        <p>position:74</p>
+        <h2>misc helixCam BB</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>AMP</p>
+        
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:35-g43gj5w"	arget="_blank">Geneious Link</a></p>
+        <p><a href="helixCam-BB.gb" download="Plasmid.gb">Download</a></p>
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p></p>
+        <p></p>
+        <p>misc</p>
+        <p></p>
+    </div>
+        
+<div class="data active" id="data75">
+        <p>position:75</p>
+        <h2>misc sfGFP</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p></p>
+        
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:3f-g43gl35"	arget="_blank">Geneious Link</a></p>
+        <p><a href="sfGFP.gb" download="Plasmid.gb">Download</a></p>
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p></p>
+        <p></p>
+        <p>misc</p>
+        <p></p>
+    </div>
+        
+<div class="data active" id="data76">
+        <p>position:76</p>
+        <h2>misc Z17</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p></p>
+        
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:6d-g43my92"	arget="_blank">Geneious Link</a></p>
+        <p><a href="Z17-amp.gb" download="Plasmid.gb">Download</a></p>
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p></p>
+        <p></p>
+        <p>misc</p>
+        <p></p>
+    </div>
+        
+<div class="data active" id="data77">
+        <p>position:77</p>
+        <h2>misc Z18</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p></p>
+        
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:18-g4t771e"	arget="_blank">Geneious Link</a></p>
+        <p><a href="Z18-amp.gb" download="Plasmid.gb">Download</a></p>
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p></p>
+        <p></p>
+        <p>misc</p>
+        <p></p>
+    </div>
+        
+<div class="data active" id="data78">
+        <p>position:78</p>
+        <h2>misc helixCam/sfGFP-1</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>AMP/KAN</p>
+        
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:3x-g43gngcgeneious://prime/documents?urn=urn:local:davidjohnson:3x-g43gngc"	arget="_blank">Geneious Link</a></p>
+        <p><a href="helixCam-sfGFP.gb" download="Plasmid.gb">Download</a></p>
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p></p>
+        <p></p>
+        <p>misc</p>
+        <p></p>
+    </div>
+        
+<div class="data active" id="data79">
+        <p>position:79</p>
+        <h2>misc helixCam/sfGFP-2</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>AMP/KAN</p>
+        
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:3x-g43gngc"	arget="_blank">Geneious Link</a></p>
+        <p><a href="helixCam-sfGFP.gb" download="Plasmid.gb">Download</a></p>
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p></p>
+        <p></p>
+        <p>misc</p>
+        <p></p>
+    </div>
+        
+<div class="data active" id="data80">
+        <p>position:80</p>
+        <h2>misc helixCam/sfGFP-3</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p>AMP/KAN</p>
+        
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:3x-g43gngc"	arget="_blank">Geneious Link</a></p>
+        <p><a href="helixCam-sfGFP.gb" download="Plasmid.gb">Download</a></p>
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p></p>
+        <p></p>
+        <p>misc</p>
+        <p></p>
+    </div>
+        
+<div class="data active" id="data81">
+        <p>position:81</p>
+        <h2>glycerol stock EMeRALD</h2>
+        <p>2023-04-10 00:00:00</p>
+        <p></p>
+        
+        <p><a href="geneious://prime/documents?urn=urn:local:davidjohnson:13n-g1vr239"	arget="_blank">Geneious Link</a></p>
+        <p><a href="EMeRALD-plasmid.gb" download="Plasmid.gb">Download</a></p>
+        <p><a href="https://benchling.com/dajohnson/f_/ci4kmM8K-cemi/"	arget="_blank">Benchling</a></p>
+        <p></p>
+    </div>
+        
+</div>
+</div>
+<script>
+  // Get all buttons
+  var buttons = document.querySelectorAll('.button');
+
+  // Get all data elements
+  var dataElements = document.querySelectorAll('.data');
+
+  // Variable to keep track of whether the button has been clicked before or not
+  var hasClicked = false;
+
+  // Loop through buttons and add event listener
+  buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      // Remove active class from all buttons
+      buttons.forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+
+      // Add active class to clicked button
+      button.classList.add('active');
+
+      // Remove active class from all data elements
+      dataElements.forEach(function(dataElement) {
+        dataElement.classList.remove('active');
+      });
+
+      // Get data target from clicked button and add active class to corresponding data element
+      var dataTarget = button.getAttribute('data-target');
+      var activeData = document.getElementById(dataTarget);
+      activeData.classList.add('active');
+
+      // Show the right column only on the first click
+      if (!hasClicked) {
+        document.querySelector('.column.right').style.display = 'block';
+        hasClicked = true;
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>
+
