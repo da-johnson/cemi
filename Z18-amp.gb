@@ -1,0 +1,163 @@
+LOCUS       pQE80_T5_Z18-ehaA_LacI_PCR_Product        1260 bp    DNA     linear   UNA 10-APR-2023
+DEFINITION  Ordered 20220812.
+ACCESSION   urn.local.davidjohnson.18-g4t771e
+VERSION     urn.local.davidjohnson.18-g4t771e
+KEYWORDS    .
+SOURCE      synthetic DNA construct
+  ORGANISM  synthetic DNA construct.
+FEATURES             Location/Qualifiers
+     sig_peptide     1..66
+                     /gene="pelB (fragment)"
+                     /product="leader peptide for secretion"
+                     /standard_name="pelB signal sequence"
+     gene            1..78
+                     /locus_tag="PelB"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="PelB"
+     CDS             1..>1260
+                     /note="Derived using Geneious Prime 2023.0.4 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="Z18"
+     misc_feature    join(202..>1260,<1..78)
+                     /note="Geneious type: Concatenated sequence"
+                     /note="Derived using Geneious Prime 2022.1.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /note="Derived using Geneious Prime 2023.0.4 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="pQE80_T5_Z17-ehaA_LacI PCR Product
+                     (concatenated sequence 1)"
+     primer_bind     1..19
+                     /note="Derived using Geneious Prime 2023.0.4 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="Emerald_F"
+     primer_bind     1..19
+                     /note="Derived using Geneious Prime 2023.0.4 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="Z__-fwd"
+     primer_bind     1..19
+                     /note="Derived using Geneious Prime 2023.0.4 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="helixCam_F"
+     misc_feature    39..78
+                     /note="Geneious type: ligation"
+                     /note="Derived using Geneious Prime 2022.1.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /note="Derived using Geneious Prime 2023.0.4 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="Ligation"
+     misc_feature    49..78
+                     /locus_tag="5' flanking for CC synthesis"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="5' flanking for CC synthesis"
+     primer_bind     49..63
+                     /locus_tag="TMW535"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="TMW535"
+     primer_bind     complement(60..78)
+                     /locus_tag="TMW541"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="TMW541"
+     primer_bind     complement(61..78)
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="HelixCam_Reverse"
+     primer_bind     complement(61..78)
+                     /note="Derived using Geneious Prime 2022.1.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /note="Derived using Geneious Prime 2023.0.4 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="HelixCam_R"
+     misc_feature    79..201
+                     /locus_tag="Z18"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /note="Geneious type: CDS"
+                     /standard_name="Z18"
+     CDS             202..237
+                     /standard_name="GS linker"
+     primer_bind     complement(202..219)
+                     /locus_tag="TMW658"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="TMW658"
+     primer_bind     202..216
+                     /locus_tag="TMW540"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="TMW540"
+     primer_bind     202..215
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="HelixCam_Forward"
+     primer_bind     202..216
+                     /note="Derived using Geneious Prime 2022.1.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /note="Derived using Geneious Prime 2023.0.4 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="HelixCam-F"
+     misc_feature    202..241
+                     /note="Geneious type: ligation"
+                     /note="Derived using Geneious Prime 2022.1.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /note="Derived using Geneious Prime 2023.0.4 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="Ligation"
+     primer_bind     complement(213..231)
+                     /locus_tag="TMW536"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="TMW536"
+     primer_bind     238..255
+                     /locus_tag="TMW657"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="TMW657"
+     primer_bind     238..254
+                     /note="Derived using Geneious Prime 2022.1.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /note="Derived using Geneious Prime 2023.0.4 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="HelixCam-F2"
+     misc_feature    238..277
+                     /note="Geneious type: ligation"
+                     /note="Derived using Geneious Prime 2022.1.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /note="Derived using Geneious Prime 2023.0.4 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="Ligation"
+     gene            244..>1260
+                     /locus_tag="Autotransporter"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="Autotransporter"
+     primer_bind     complement(1239..1260)
+                     /note="Derived using Geneious Prime 2023.0.4 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="Z__-rvs"
+ORIGIN      
+        1 atgaaatacc tgctgccgac cgctgctgct ggtctgctgc tcctcgctgc ccagccggcg
+       61 atggccatga gaggatcgtc gatcgctgct acgttagaaa atgacttagc gcgtctggaa
+      121 aatgaaaatg ctcgtctgga aaaggacatt gcgaatctgg agcgtgattt ggcgaaattg
+      181 gagcgtgagg aggcttattt cggtagcggt agcggctctg gatcaggcag cggatcactc
+      241 gagacaccta cgccgggtcc ggatctgaat gtggataatg acctgcgacc ggaggcgggt
+      301 agctacattg cgaaccttgc agcagcgaat accatgttca ccacgcgtct gcatgagcgt
+      361 ctgggtaata cgtactatac cgacatggtg acgggtgagc agaaacaaac cactatgtgg
+      421 atgcgccatg aaggtggtca taataaatgg cgtgatggca gcggccagct gaaaacccaa
+      481 agcaatcgct atgttctgca actgggaggc gatgtcgcgc agtggagcca aaacggcagc
+      541 gaccgctggc atgttggggt catggcggga tatggcaaca gcgacagcaa aaccatttcc
+      601 tcgcgaaccg gttatcgtgc aaaagcgagt gtgaacggat atagcacagg cctctatgcc
+      661 acctggtatg ccgatgacga gtcgcgtaat ggcgcgtatc tcgacagttg ggcgcagtac
+      721 agctggtttg ataacacagt gaaaggggat gacttacaaa gtgaatccta taaatcaaaa
+      781 ggatttaccg cttcactgga agctggatac aaacacaaat tagctgaatt taatggcagc
+      841 cagggaacgc gtaatgaatg gtatgttcag ccgcaagcac aggttacctg gatgggagtc
+      901 aaagccgata agcaccgcga aagcaacgga accctcgttc atagcaacgg tgatggcaat
+      961 gttcaaaccc gacttggcgt aaaaacctgg ctgaagagcc accataaaat ggatgacggt
+     1021 aaatcccgcg agttccagcc gtttgtagaa gtgaactggc tacataacag taaggatttc
+     1081 agcaccagta tggatggcgt gtctgtcact caggatggag cccgaaatat tgctgagata
+     1141 aaaaccgggg tggaaggaca gctaaatgcc aacctgaatg tctgggggaa tgtgggcgtt
+     1201 caggttgccg ataggggata taatgacacc tctgcaatgg ttggcattaa gtggcaattc
+//

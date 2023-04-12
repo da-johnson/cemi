@@ -1,0 +1,46 @@
+LOCUS       C3m_PCR_Product          777 bp    DNA     linear   UNA 05-APR-2023
+DEFINITION  sfGFP.
+ACCESSION   urn.local.davidjohnson.3f-g43gl35
+VERSION     urn.local.davidjohnson.3f-g43gl35
+KEYWORDS    .
+SOURCE      
+  ORGANISM  .
+FEATURES             Location/Qualifiers
+     misc_feature    <31..>747
+                     /note="Geneious type: misc"
+                     /standard_name="170510_twist_order"
+     CDS             31..747
+                     /standard_name="sfGFP BBa Safe"
+     primer_bind     31..49
+                     /note="Derived using Geneious Prime 2023.0.4 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="helix-ovr-sfGFP-fwd"
+     misc_feature    <31..33
+                     /note="Geneious type: ligation"
+                     /note="Derived using Geneious Prime 2023.0.4 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="Ligation"
+     misc_feature    <31..33
+                     /note="Geneious type: Concatenated sequence"
+                     /note="Derived using Geneious Prime 2023.0.4 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="C empty Linear (concatenated sequence 1)"
+     primer_bind     complement(721..747)
+                     /note="Derived using Geneious Prime 2023.0.4 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="helix-ovr-sfGFP-rvs"
+ORIGIN      
+        1 acagaattca ttaaagagga gaaattaact atgcgtaaag gcgaagagct gttcactggt
+       61 gtcgtcccta ttctggtgga actggatggt gatgtcaacg gtcataagtt ttccgtgcgt
+      121 ggcgagggtg aaggtgacgc aactaatggt aaactgacgc tgaagttcat ctgtactact
+      181 ggtaaactgc cggtaccttg gccgactctg gtaacgacgc tgacttatgg tgttcagtgc
+      241 tttgctcgtt atccggacca tatgaagcag catgacttct tcaagtccgc catgccggaa
+      301 ggctatgtgc aggaacgcac gatttccttt aaggatgacg gcacgtacaa aacgcgtgcg
+      361 gaagtgaaat ttgaaggcga taccctggta aaccgcattg agctgaaagg cattgacttt
+      421 aaagaagatg gcaatatcct gggccataag ctggaataca attttaacag ccacaatgtt
+      481 tacatcaccg ccgataaaca aaaaaatggc attaaagcga attttaaaat tcgccacaac
+      541 gtggaggatg gcagcgtgca gctggctgat cactaccagc aaaacactcc aatcggtgat
+      601 ggtcctgttc tgctgccaga caatcactat ctgagcacgc aaagcgttct gtctaaagat
+      661 ccgaacgaga aacgcgatca tatggttctg ctggagttcg taaccgcagc gggcatcacg
+      721 catggtatgg atgaactgta caaatgatga aagcttaatt agctgagctt ggactcc
+//

@@ -1,0 +1,497 @@
+LOCUS       pQE80_T5_Z17-ehaA_LacI        5945 bp ds-DNA     circular SYN 21-MAR-2023
+DEFINITION  Ordered 20220812.
+ACCESSION
+VERSION     .
+KEYWORDS    pQE80_T5_Z17-ehaA_LacI.
+SOURCE      synthetic DNA construct
+  ORGANISM  synthetic DNA construct.
+REFERENCE   1  (bases 1 to 5945)
+  TITLE     helixCAM: A Platform for Programmable Cellular Assembly in Bacteria
+            and Human Cells
+  JOURNAL   Unpublished
+REFERENCE   2  (bases 1 to 5945)
+  AUTHORS   .
+  TITLE     Direct Submission
+  JOURNAL   Exported Jul 14, 2022 from SnapGene Server 1.1.58
+            http://www.snapgene.com
+FEATURES             Location/Qualifiers
+     misc_feature    9..149
+                     /note="basis of mobility region from pBR322"
+                     /standard_name="bom"
+     misc_feature    complement(9..149)
+                     /note="pLannotate"
+                     /note="Derived using Geneious Prime 2022.1.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="bom"
+     primer_bind     64..83
+                     /note="pRS vectors, use to sequence yeast selectable 
+                     marker"
+                     /standard_name="pRS-marker"
+     primer_bind     complement(164..181)
+                     /note="L4440 vector, forward primer"
+                     /standard_name="L4440"
+     primer_bind     complement(214..234)
+                     /note="Derived using Geneious Prime 2023.0.4 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="SC190/Part.Seq.REV"
+     rep_origin      250..1069
+     rep_origin      complement(335..923)
+     misc_feature    335..923
+                     /locus_tag="ori"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+     primer_bind     complement(395..413)
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="SC507 / ColE1_seq_F"
+     primer_bind     complement(415..434)
+                     /note="pBR322 origin, forward primer"
+                     /standard_name="pBR322ori-F"
+     regulatory      747..764
+                     /note="Geneious type: promoter"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="RNA I promoter"
+     regulatory      complement(901..917)
+                     /note="Geneious type: promoter"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="RNAII promoter"
+     gene            complement(1094..1954)
+                     /gene="AmpR"
+                     /standard_name="AmpR"
+                     /locus_tag="AmpR"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+     CDS             complement(1094..1954)
+                     /codon_start=1
+                     /gene="bla"
+                     /product="beta-lactamase"
+                     /note="confers resistance to ampicillin, carbenicillin,
+                     and related antibiotics"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="AmpR"
+     misc_feature    complement(1094..1954)
+                     /locus_tag="AmpR"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+     misc_feature    1175..1201
+                     /locus_tag="New Feature(1)"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+     primer_bind     1565..1585
+                     /note="Derived using Geneious Prime 2023.0.4 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="SC594 / part_split_F"
+     primer_bind     complement(1587..1607)
+                     /note="Derived using Geneious Prime 2023.0.4 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="SC595 / part_split_R"
+     primer_bind     1717..1736
+                     /note="Ampicillin resistance gene, reverse primer"
+                     /standard_name="Amp-R"
+     regulatory      complement(1955..2059)
+                     /note="Geneious type: promoter"
+                     /gene="bla"
+                     /standard_name="AmpR promoter"
+     misc_feature    complement(1955..2059)
+                     /locus_tag="AmpR Promoter"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+     primer_bind     2127..2145
+                     /note="pBR322 vectors, upsteam of EcoRI site, forward 
+                     primer"
+                     /standard_name="pBRforEco"
+     gene            2166..2247
+                     /standard_name="T5 Promoter"
+                     /locus_tag="T5 Promoter"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+     regulatory      2169..2213
+                     /note="Geneious type: promoter"
+                     /note="bacteriophage T5 promoter for E. coli RNA 
+                     polymerase, with embedded lac operator"
+                     /standard_name="T5 promoter"
+     primer_bind     2169..2198
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="T5 fluorophore F"
+     protein_bind    2189..2205
+                     /bound_moiety="lac repressor encoded by lacI"
+                     /note="The lac repressor binds to the lac operator to 
+                     inhibit transcription in E. coli. This inhibition can be
+                     relieved by adding lactose or
+                     isopropyl-beta-D-thiogalactopyranoside (IPTG)."
+                     /standard_name="lac operator"
+     protein_bind    complement(2189..2205)
+                     /bound_moiety="lac repressor encoded by lacI"
+                     /note="The lac repressor binds to the lac operator to 
+                     inhibit transcription in E. coli. This inhibition can be
+                     relieved by adding lactose or
+                     isopropyl-beta-D-thiogalactopyranoside (IPTG)."
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="lac operator"
+     protein_bind    2221..2237
+                     /bound_moiety="lac repressor encoded by lacI"
+                     /note="The lac repressor binds to the lac operator to 
+                     inhibit transcription in E. coli. This inhibition can be
+                     relieved by adding lactose or
+                     isopropyl-beta-D-thiogalactopyranoside (IPTG)."
+                     /standard_name="lac operator"
+     protein_bind    complement(2221..2237)
+                     /bound_moiety="lac repressor encoded by lacI"
+                     /note="The lac repressor binds to the lac operator to 
+                     inhibit transcription in E. coli. This inhibition can be
+                     relieved by adding lactose or
+                     isopropyl-beta-D-thiogalactopyranoside (IPTG)."
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="lac operator"
+     primer_bind     2226..2248
+                     /note="In lacZ gene"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="M13/pUC Reverse"
+     primer_bind     complement(2245..2273)
+                     /standard_name="TMW1003"
+                     /locus_tag="TMW1003"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+     5'UTR           2256..2267
+                     /note="Derived using Geneious Prime 2022.1.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="B0034"
+     misc_feature    2256..2267
+                     /note="Geneious type: RBS"
+                     /note="strong bacterial ribosome binding site (Elowitz and
+                      Leibler, 2000)"
+     sig_peptide     2274..2339
+                     /gene="pelB (fragment)"
+                     /product="leader peptide for secretion"
+                     /standard_name="pelB signal sequence"
+     gene            2274..2351
+                     /standard_name="PelB"
+                     /locus_tag="PelB"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+     CDS             2274..2339
+                     /note="pLannotate"
+                     /note="Derived using Geneious Prime 2022.1.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="pelB signal sequence"
+     primer_bind     2274..2292
+                     /note="Derived using Geneious Prime 2023.0.4 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="Emerald_F"
+     primer_bind     2274..2292
+                     /note="Derived using Geneious Prime 2023.0.4 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="helixCam_F"
+     misc_feature    2312..2351
+                     /note="Geneious type: ligation"
+                     /note="Derived using Geneious Prime 2022.1.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="Ligation"
+     misc_feature    2322..2351
+                     /standard_name="5' flanking for CC synthesis"
+                     /locus_tag="5' flanking for CC synthesis"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+     primer_bind     2322..2336
+                     /standard_name="TMW535"
+                     /locus_tag="TMW535"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+     primer_bind     complement(2333..2351)
+                     /standard_name="TMW541"
+                     /locus_tag="TMW541"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+     primer_bind     complement(2334..2351)
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="HelixCam_Reverse"
+     primer_bind     complement(2334..2351)
+                     /note="Derived using Geneious Prime 2022.1.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="HelixCam_R"
+     misc_feature    2478..2351
+                     /note="Geneious type: Concatenated sequence"
+                     /note="Derived using Geneious Prime 2022.1.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="pQE80_T5_Z17-ehaA_LacI PCR Product
+                     (concatenated sequence 1)"
+     misc_feature    2478..2517
+                     /note="Geneious type: ligation"
+                     /note="Derived using Geneious Prime 2022.1.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="Ligation"
+     CDS             2478..2513
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="GS linker"
+     primer_bind     complement(2478..2495)
+                     /standard_name="TMW658"
+                     /locus_tag="TMW658"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+     primer_bind     2478..2492
+                     /standard_name="TMW540"
+                     /locus_tag="TMW540"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+     primer_bind     2478..2492
+                     /note="Derived using Geneious Prime 2022.1.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="HelixCam-F"
+     primer_bind     2478..2491
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="HelixCam_Forward"
+     primer_bind     complement(2489..2507)
+                     /standard_name="TMW536"
+                     /locus_tag="TMW536"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+     misc_feature    2514..2553
+                     /note="Geneious type: ligation"
+                     /note="Derived using Geneious Prime 2022.1.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="Ligation"
+     primer_bind     2514..2531
+                     /standard_name="TMW657"
+                     /locus_tag="TMW657"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+     primer_bind     2514..2530
+                     /note="Derived using Geneious Prime 2022.1.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="HelixCam-F2"
+     gene            2520..3539
+                     /standard_name="Autotransporter"
+                     /locus_tag="Autotransporter"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+     primer_bind     complement(3518..3539)
+                     /note="Derived using Geneious Prime 2023.0.4 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="Emerald_R"
+     primer_bind     complement(3518..3539)
+                     /note="Derived using Geneious Prime 2023.0.4 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="helixCam_R"
+     primer_bind     3540..3561
+                     /standard_name="TMW1002"
+                     /locus_tag="TMW1002"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+     regulatory      complement(3556..3661)
+                     /note="Geneious type: terminator"
+                     /locus_tag="terminator"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+     regulatory      3561..3655
+                     /note="Geneious type: terminator"
+                     /note="transcription terminator from phage lambda"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="lambda t0 terminator"
+     primer_bind     complement(3633..3655)
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="T5 fluorophore R"
+     regulatory      3670..3698
+                     /note="Geneious type: promoter"
+                     /note="pLannotate"
+                     /note="Derived using Geneious Prime 2022.1.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="cat promoter"
+     gene            3699..4358
+                     /standard_name="camR"
+                     /locus_tag="camR"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+     CDS             3699..4358
+                     /codon_start=1
+                     /gene="cat"
+                     /product="chloramphenicol acetyltransferase"
+                     /note="confers resistance to chloramphenicol"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="CmR"
+     primer_bind     complement(3765..3784)
+                     /note="Chloramphenicol resistance gene, reverse primer"
+                     /standard_name="CAT-R"
+     regulatory      4423..4509
+                     /note="Geneious type: terminator"
+                     /gene="Escherichia coli rrnB"
+                     /note="transcription terminator T1 from the E. coli rrnB 
+                     gene"
+                     /standard_name="rrnB T1 terminator"
+     regulatory      complement(4423..4509)
+                     /note="Geneious type: terminator"
+                     /note="pLannotate"
+                     /note="Derived using Geneious Prime 2022.1.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="rrnB T1 terminator"
+     regulatory      complement(4532..4549)
+                     /note="Geneious type: promoter"
+                     /note="pLannotate"
+                     /note="Derived using Geneious Prime 2022.1.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="tet promoter"
+     misc_feature    4532..4560
+                     /note="pLannotate"
+                     /note="Derived using Geneious Prime 2022.1.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="CEN/ARS"
+     protein_bind    4568..4589
+                     /bound_moiety="E. coli catabolite activator protein"
+                     /note="CAP binding activates transcription in the presence
+                      of cAMP."
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="CAP binding site"
+     gene            complement(4602..5684)
+                     /gene="lacI"
+                     /gene_synonym="ECK0342; JW0336"
+                     /db_xref="ECOCYC:EG10525; EcoGene:EG10525; GeneID:945007"
+                     /standard_name="lacI"
+                     /locus_tag="lacI"
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+     CDS             complement(4602..5684)
+                     /codon_start=1
+                     /gene="lacI"
+                     /product="lac repressor"
+                     /note="The lac repressor binds to the lac operator to 
+                     inhibit transcription in E. coli. This inhibition can be
+                     relieved by adding lactose or
+                     isopropyl-beta-D-thiogalactopyranoside (IPTG)."
+                     /note="Derived using Geneious Prime 2022.2.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="lacI"
+     primer_bind     5646..5665
+                     /note="LacI, reverse primer"
+                     /standard_name="LacI-R"
+     regulatory      complement(5685..5762)
+                     /note="Geneious type: promoter"
+                     /gene="lacI (mutant)"
+                     /note="In the lacIq allele, a single base change in the 
+                     promoter boosts expression of the lacI gene about
+                     10-fold."
+                     /standard_name="lacIq promoter"
+     CDS             5811..5852
+                     /note="pLannotate"
+                     /note="Derived using Geneious Prime 2022.1.1 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="rop"
+     primer_bind     complement(5846..5868)
+                     /note="pGEX vectors, reverse primer"
+                     /standard_name="pGEX 3'"
+     CDS             8297..2477
+                     /standard_name="Z17"
+ORIGIN      
+        1 tgtcggggcg cagccatgac ccagtcacgt agcgatagcg gagtgtatac tggcttaact
+       61 atgcggcatc agagcagatt gtactgagag tgcaccatat gcggtgtgaa ataccgcaca
+      121 gatgcgtaag gagaaaatac cgcatcaggc gctcttccgc ttcctcgctc actgactcgc
+      181 tgcgctcggt cgttcggctg cggcgagcgg tatcagctca ctcaaaggcg gtaatacggt
+      241 tatccacaga atcaggggat aacgcaggaa agaacatgtg agcaaaaggc cagcaaaagg
+      301 ccaggaaccg taaaaaggcc gcgttgctgg cgtttttcca taggctccgc ccccctgacg
+      361 agcatcacaa aaatcgacgc tcaagtcaga ggtggcgaaa cccgacagga ctataaagat
+      421 accaggcgtt tccccctgga agctccctcg tgcgctctcc tgttccgacc ctgccgctta
+      481 ccggatacct gtccgccttt ctcccttcgg gaagcgtggc gctttctcat agctcacgct
+      541 gtaggtatct cagttcggtg taggtcgttc gctccaagct gggctgtgtg cacgaacccc
+      601 ccgttcagcc cgaccgctgc gccttatccg gtaactatcg tcttgagtcc aacccggtaa
+      661 gacacgactt atcgccactg gcagcagcca ctggtaacag gattagcaga gcgaggtatg
+      721 taggcggtgc tacagagttc ttgaagtggt ggcctaacta cggctacact agaaggacag
+      781 tatttggtat ctgcgctctg ctgaagccag ttaccttcgg aaaaagagtt ggtagctctt
+      841 gatccggcaa acaaaccacc gctggtagcg gtggtttttt tgtttgcaag cagcagatta
+      901 cgcgcagaaa aaaaggatct caagaagatc ctttgatctt ttctacgggg tctgacgctc
+      961 agtggaacga aaactcacgt taagggattt tggtcatgag attatcaaaa aggatcttca
+     1021 cctagatcct tttaaattaa aaatgaagtt ttaaatcaat ctaaagtata tatgagtaaa
+     1081 cttggtctga cagttaccaa tgcttaatca gtgaggcacc tatctcagcg atctgtctat
+     1141 ttcgttcatc catagttgcc tgactccccg tcgtgtagat aactacgata cgggagggct
+     1201 taccatctgg ccccagtgct gcaatgatac cgcgagaccc acgctcaccg gctccagatt
+     1261 tatcagcaat aaaccagcca gccggaaggg ccgagcgcag aagtggtcct gcaactttat
+     1321 ccgcctccat ccagtctatt aattgttgcc gggaagctag agtaagtagt tcgccagtta
+     1381 atagtttgcg caacgttgtt gccattgcta caggcatcgt ggtgtcacgc tcgtcgtttg
+     1441 gtatggcttc attcagctcc ggttcccaac gatcaaggcg agttacatga tcccccatgt
+     1501 tgtgcaaaaa agcggttagc tccttcggtc ctccgatcgt tgtcagaagt aagttggccg
+     1561 cagtgttatc actcatggtt atggcagcac tgcataattc tcttactgtc atgccatccg
+     1621 taagatgctt ttctgtgact ggtgagtact caaccaagtc attctgagaa tagtgtatgc
+     1681 ggcgaccgag ttgctcttgc ccggcgtcaa tacgggataa taccgcgcca catagcagaa
+     1741 ctttaaaagt gctcatcatt ggaaaacgtt cttcggggcg aaaactctca aggatcttac
+     1801 cgctgttgag atccagttcg atgtaaccca ctcgtgcacc caactgatct tcagcatctt
+     1861 ttactttcac cagcgtttct gggtgagcaa aaacaggaag gcaaaatgcc gcaaaaaagg
+     1921 gaataagggc gacacggaaa tgttgaatac tcatactctt cctttttcaa tattattgaa
+     1981 gcatttatca gggttattgt ctcatgagcg gatacatatt tgaatgtatt tagaaaaata
+     2041 aacaaatagg ggttccgcgc acatttcccc gaaaagtgcc acctgacgtc taagaaacca
+     2101 ttattatcat gacattaacc tataaaaata ggcgtatcac gaggcccttt cgtcttcacg
+     2161 tcgagaaatc ataaaaaatt tatttgcttt gtgagcggat aacaattata atagattcaa
+     2221 ttgtgagcgg ataacaattt cacacagaat tcattaaaga ggagaaatta actatgaaat
+     2281 acctgctgcc gaccgctgct gctggtctgc tgctcctcgc tgcccagccg gcgatggcca
+     2341 tgagaggatc gaacgagaag gaagagttaa aatctaagaa ggcggaattg cgtaatcgta
+     2401 tcgagcaatt gaagcagaag cgcgagcagt taaagcaaaa gattgcaaat ttacgcaagg
+     2461 aaattgaggc ctacaagggt agcggtagcg gctctggatc aggcagcgga tcactcgaga
+     2521 cacctacgcc gggtccggat ctgaatgtgg ataatgacct gcgaccggag gcgggtagct
+     2581 acattgcgaa ccttgcagca gcgaatacca tgttcaccac gcgtctgcat gagcgtctgg
+     2641 gtaatacgta ctataccgac atggtgacgg gtgagcagaa acaaaccact atgtggatgc
+     2701 gccatgaagg tggtcataat aaatggcgtg atggcagcgg ccagctgaaa acccaaagca
+     2761 atcgctatgt tctgcaactg ggaggcgatg tcgcgcagtg gagccaaaac ggcagcgacc
+     2821 gctggcatgt tggggtcatg gcgggatatg gcaacagcga cagcaaaacc atttcctcgc
+     2881 gaaccggtta tcgtgcaaaa gcgagtgtga acggatatag cacaggcctc tatgccacct
+     2941 ggtatgccga tgacgagtcg cgtaatggcg cgtatctcga cagttgggcg cagtacagct
+     3001 ggtttgataa cacagtgaaa ggggatgact tacaaagtga atcctataaa tcaaaaggat
+     3061 ttaccgcttc actggaagct ggatacaaac acaaattagc tgaatttaat ggcagccagg
+     3121 gaacgcgtaa tgaatggtat gttcagccgc aagcacaggt tacctggatg ggagtcaaag
+     3181 ccgataagca ccgcgaaagc aacggaaccc tcgttcatag caacggtgat ggcaatgttc
+     3241 aaacccgact tggcgtaaaa acctggctga agagccacca taaaatggat gacggtaaat
+     3301 cccgcgagtt ccagccgttt gtagaagtga actggctaca taacagtaag gatttcagca
+     3361 ccagtatgga tggcgtgtct gtcactcagg atggagcccg aaatattgct gagataaaaa
+     3421 ccggggtgga aggacagcta aatgccaacc tgaatgtctg ggggaatgtg ggcgttcagg
+     3481 ttgccgatag gggatataat gacacctctg caatggttgg cattaagtgg caattctgaa
+     3541 agcttaatta gctgagcttg gactcctgtt gatagatcca gtaatgacct cagaactcca
+     3601 tctggatttg ttcagaacgc tcggttgccg ccgggcgttt tttattggtg agaatccaag
+     3661 ctagcttggc gagattttca ggagctaagg aagctaaaat ggagaaaaaa atcactggat
+     3721 ataccaccgt tgatatatcc caatggcatc gtaaagaaca ttttgaggca tttcagtcag
+     3781 ttgctcaatg tacctataac cagaccgttc agctggatat tacggccttt ttaaagaccg
+     3841 taaagaaaaa taagcacaag ttttatccgg cctttattca cattcttgcc cgcctgatga
+     3901 atgctcatcc ggaatttcgt atggcaatga aagacggtga gctggtgata tgggatagtg
+     3961 ttcacccttg ttacaccgtt ttccatgagc aaactgaaac gttttcatcg ctctggagtg
+     4021 aataccacga cgatttccgg cagtttctac acatatattc gcaagatgtg gcgtgttacg
+     4081 gtgaaaacct ggcctatttc cctaaagggt ttattgagaa tatgtttttc gtctcagcca
+     4141 atccctgggt gagtttcacc agttttgatt taaacgtggc caatatggac aacttcttcg
+     4201 cccccgtttt caccatgggc aaatattata cgcaaggcga caaggtgctg atgccgctgg
+     4261 cgattcaggt tcatcatgcc gtttgtgatg gcttccatgt cggcagaatg cttaatgaat
+     4321 tacaacagta ctgcgatgag tggcagggcg gggcgtaatt tttttaaggc agttattggt
+     4381 gcccttaaac gcctggggta atgactctct agcttgaggc atcaaataaa acgaaaggct
+     4441 cagtcgaaag actgggcctt tcgttttatc tgttgtttgt cggtgaacgc tctcctgagt
+     4501 aggacaaatc cgccctctag attacgtgca gtcgatgata agctgtcaaa catgagaatt
+     4561 gtgcctaatg agtgagctaa cttacattaa ttgcgttgcg ctcactgccc gctttccagt
+     4621 cgggaaacct gtcgtgccag ctgcattaat gaatcggcca acgcgcgggg agaggcggtt
+     4681 tgcgtattgg gcgccagggt ggtttttctt ttcaccagtg agacgggcaa cagctgattg
+     4741 cccttcaccg cctggccctg agagagttgc agcaagcggt ccacgctggt ttgccccagc
+     4801 aggcgaaaat cctgtttgat ggtggttaac ggcgggatat aacatgagct gtcttcggta
+     4861 tcgtcgtatc ccactaccga gatatccgca ccaacgcgca gcccggactc ggtaatggcg
+     4921 cgcattgcgc ccagcgccat ctgatcgttg gcaaccagca tcgcagtggg aacgatgccc
+     4981 tcattcagca tttgcatggt ttgttgaaaa ccggacatgg cactccagtc gccttcccgt
+     5041 tccgctatcg gctgaatttg attgcgagtg agatatttat gccagccagc cagacgcaga
+     5101 cgcgccgaga cagaacttaa tgggcccgct aacagcgcga tttgctggtg acccaatgcg
+     5161 accagatgct ccacgcccag tcgcgtaccg tcttcatggg agaaaataat actgttgatg
+     5221 ggtgtctggt cagagacatc aagaaataac gccggaacat tagtgcaggc agcttccaca
+     5281 gcaatggcat cctggtcatc cagcggatag ttaatgatca gcccactgac gcgttgcgcg
+     5341 agaagattgt gcaccgccgc tttacaggct tcgacgccgc ttcgttctac catcgacacc
+     5401 accacgctgg cacccagttg atcggcgcga gatttaatcg ccgcgacaat ttgcgacggc
+     5461 gcgtgcaggg ccagactgga ggtggcaacg ccaatcagca acgactgttt gcccgccagt
+     5521 tgttgtgcca cgcggttggg aatgtaattc agctccgcca tcgccgcttc cactttttcc
+     5581 cgcgttttcg cagaaacgtg gctggcctgg ttcaccacgc gggaaacggt ctgataagag
+     5641 acaccggcat actctgcgac atcgtataac gttactggtt tcacattcac caccctgaat
+     5701 tgactctctt ccgggcgcta tcatgccata ccgcgaaagg ttttgcacca ttcgatggtg
+     5761 tcggaatttc gggcagcgtt gggtcctggc cacgggtgcg catgatctag agctgcctcg
+     5821 cgcgtttcgg tgatgacggt gaaaacctct gacacatgca gctcccggag acggtcacag
+     5881 cttgtctgta agcggatgcc gggagcagac aagcccgtca gggcgcgtca gcgggtgttg
+     5941 gcggg
+//
