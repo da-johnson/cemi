@@ -384,12 +384,12 @@ with open("index.html", "w") as f:
         if pd.isna(row['geneious']):
             geneious = ''
         else:
-            geneious = '<p><a href=\"{}"\target="_blank">Geneious Link</a></p>'.format(row['geneious'])
+            geneious = '<p><a href=\"{}\"target="_blank">Geneious Link</a></p>'.format(row['geneious'])
 
         if pd.isna(row['benchling']):
             benchling = ''
         else:
-            benchling = '<p><a href=\"{}"\target="_blank">Benchling</a></p>'.format(row['benchling'])
+            benchling = '<p><a href=\"{}\"target="_blank">Benchling</a></p>'.format(row['benchling'])
 
         if pd.isna(row['genbank']):
             genbank = ''
@@ -399,7 +399,7 @@ with open("index.html", "w") as f:
         if pd.isna(row['addgene']):
             addgene = ''
         else:
-            addgene = '<p><a href=\"{}\"target="_blank">AddGene</a></p>'.format(row['addgene'])
+            addgene = '<p><a href=\"{}"\target="_blank">AddGene</a></p>'.format(row['addgene'])
 
         if pd.isna(row['position']):
             position = ''
